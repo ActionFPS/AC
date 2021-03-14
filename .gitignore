@@ -1,3 +1,4 @@
+ac_server
 .travis.yml
 *.o
 *.lo

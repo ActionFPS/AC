@@ -44,3 +44,13 @@ free unmodified distribution of AssaultCube's source and binaries. If you have
 any doubts, you can look at the
 [license](https://assault.cubers.net/docs/license.html).
 
+## Build server binary
+
+```bash
+$ image_name=ac_server:1 && \
+    docker build -t $image_name -f Dockerfile source && \
+    id=$(docker create $image_name) && \
+    (docker cp $id:/source/src/ac_server - | tar xvf -) && \
+    ls -l ac_server; \
+    docker rm -v $id
+```
